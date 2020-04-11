@@ -1,0 +1,141 @@
+@font-face {
+  font-family: 'HYXiaoLiShuF';
+  src: url(HYXiaoLiShuF.ttf);
+  font-style: normal;
+  font-weight: 100;
+}
+body {
+  background-color: #F1EEE7;
+}
+#canvas{
+  height: 900px;
+  width: 1260px;
+	margin: auto;
+  background-image: url("map.png");
+  background-repeat:no-repeat;
+}
+.tooltip {
+position: absolute;
+height: auto;
+width: auto;
+background-color: white;
+border-radius: 16px;
+box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.2);
+pointer-events: none;
+opacity: 0;
+z-index: 999;
+}
+img{
+  width: 240px;
+  height: 180px;
+  object-fit: cover;
+  object-position: 0 0;
+  border-radius: 16px 16px 0px 0px;
+}
+.content{
+  display: grid;
+  grid-column-gap: 20px;
+  grid-template-columns: 960px 280px;
+}
+
+.name{
+  font-weight: bold;
+  font-size: 24px;
+  font-family:HYXiaoLiShuF;
+  color:"#333333";
+  text-align: center;
+  margin-top: 32px;
+}
+.stylename{
+  font-weight: normal;
+  font-size: 12px;
+  font-family:HYXiaoLiShuF;
+  color:"#333333";
+  text-align: center;
+}
+.life{
+  font-weight: normal;
+  font-size: 12px;
+  color:"#333333";
+  line-height: 1.5;
+  font-family:HYXiaoLiShuF;
+  display:block;
+  width: 200px;
+  padding: 8px 20px 32px 20px;
+}
+#timeline1{
+		height: 4px;
+		width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+		margin-top: 60;
+    background: #EBE6DA;
+    border-radius: 2px;
+    position: relative;
+}
+.yearcircle{
+  width: 8px;
+  height: 8px;
+  border-radius: 16px;
+  position: absolute;
+  top: -6px;
+  outline: 4px solid #F1EEE7;
+  border: 4px solid #E2DAC6;
+  background: #F1EEE7;
+  cursor: pointer;
+  align-items: center;
+}
+#yearcircleactive{
+  border: 4px solid #8B7F61;
+  background: #8B7F61;
+}
+#yearcircleinactive{
+  border: 4px solid #E2DAC6;
+  background: #F1EEE7;
+}
+
+.yeartext{
+  font-size: 20px;
+  font-family:HYXiaoLiShuF;
+  font-weight: bold;
+  margin-top: 24px;
+  margin-left: -12px;
+  width: 32px;
+  text-align: center;
+  color: #E2DAC6;
+}
+
+#yeartextactive{
+  color: #585858;
+  font-weight: bold;
+}
+#yeartextinactive{
+  color: #999999;
+  font-weight: normal;
+}
+
+h1 {
+	text-align: center;
+  margin-top: 60;
+  margin-bottom: 60;
+  height: auto;
+  font-family: HYXiaoLiShuF;
+  font-size: 48px;
+  font-weight: bold;
+  color: #8B7F61;
+}
+h3 {
+  margin-top: 240px;
+  margin-bottom: 20;
+  font-family: HYXiaoLiShuF;
+  font-size: 28px;
+  font-weight: bold;
+  color: #8B7F61;
+}
+.yeardescription {
+  font-family: HYXiaoLiShuF;
+  font-size: 18px;
+  font-weight: normal;
+  color: #8B7F61;
+  line-height: 1.5;
+}
