@@ -10,7 +10,6 @@ var vratio = height/800
 
 
 
-
 var forcex189 = d3.forceX(function(d){
   if(d.emperor189 === '1') {
           return 10*width/16}
