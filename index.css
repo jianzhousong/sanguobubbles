@@ -9,9 +9,8 @@ body {
 }
 #canvas{
   height: 900px;
-  width: 1260px;
+  width: 1220px;
 	margin: auto;
-  background-image: url("map.png");
   background-repeat:no-repeat;
 }
 .tooltip {
@@ -32,10 +31,13 @@ img{
   object-position: 0 0;
   border-radius: 16px 16px 0px 0px;
 }
+.background {
+  background-image: url("map.png");
+}
 .content{
   display: grid;
   grid-column-gap: 20px;
-  grid-template-columns: 960px 280px;
+  grid-template-columns: 920px 280px;
 }
 
 .name{
@@ -65,7 +67,7 @@ img{
 }
 #timeline1{
 		height: 4px;
-		width: 1260px;
+		width: 1220px;
     margin-left: auto;
     margin-right: auto;
 		margin-top: 60;
@@ -114,11 +116,10 @@ img{
   font-weight: normal;
 }
 
-h1 {
-	text-align: center;
-  margin-top: 60;
-  margin-bottom: 60;
-  height: auto;
+.title {
+  padding-left: 360;
+  margin-top: 40;
+  margin-bottom: 8;
   font-family: HYXiaoLiShuF;
   font-size: 48px;
   font-weight: bold;

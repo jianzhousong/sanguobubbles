@@ -3,116 +3,118 @@ var yearmax = years[years.length-1] + 4
 var yearmin = years[0]-4
 var forcex = d3.forceX(500).strength(.1)
 var forcey = d3.forceY(400).strength(.1)
+var width = 920
+var height = 780
+var hratio = width/960
+var vratio = height/800
+
+
 
 
 var forcex189 = d3.forceX(function(d){
   if(d.emperor189 === '1') {
-          return 615}
+          return 10*width/16}
   if(d.emperor189 === "2") {
-          return 680}
+          return 23*width/32}
   if(d.emperor189 === '3') {
-          return 580}
+          return 19*width/32}
   if(d.emperor189 === '4') {
-          return 665}
+          return 11*width/16}
   if(d.emperor189 === '5') {
-          return 350}
+          return 3*width/8}
   if(d.emperor189 === "6") {
-          return 540}
+          return 9*width/16}
   if(d.emperor189 === '7') {
-          return 550}
+          return 9*width/16}
   if(d.emperor189 === "8") {
-          return 325}
-  if(d.emperor189 === "9") {
-          return 350}
+          return 5*width/16}
   if(d.emperor189 === "10") {
-          return 645}
+          return 11*width/16}
   if(d.emperor189 === "11") {
-          return 555}
+          return 9*width/16}
   if(d.emperor189 === "12") {
-          return 610}
-  else{return 350} }).strength(.4)
+          return 5*width/8}
+  else{return 3*width/8}}).strength(.4)
 var forcey189 = d3.forceY(function(d){
   if(d.emperor189 === '1') {
-      return 300}
+      return 6*height/16}
   if(d.emperor189 === "2") {
-      return 220}
+      return 9*height/32}
   if(d.emperor189 === "3") {
-      return 530}
+      return 21*height/32}
   if(d.emperor189 === "4") {
-      return 190}
+      return 4*height/16}
   if(d.emperor189 === "5") {
-      return 320}
+      return 3*height/8}
   if(d.emperor189 === "6") {
-      return 405}
+      return 1*height/2}
   if(d.emperor189 === "7") {
-      return 310}
+      return 13*height/32}
   if(d.emperor189 === "8") {
-      return 430}
-  if(d.emperor189 === "9") {
-      return 350}
+      return 9*height/16}
   if(d.emperor189 === "10") {
-      return 125}
+      return 3*height/16}
   if(d.emperor189 === "11") {
-      return 365}
+      return 15*height/32}
   if(d.emperor189 === "12") {
-      return 225}
-  else{return 740} }).strength(.6)
+      return 9*height/32}
+  else{return 31*height/32} }).strength(.6)
 var forcex195 = d3.forceX(function(d){
   if(d.emperor195 === '1') {
-          return 640}
+          return 11*width/16}
   if(d.emperor195 === "2") {
-          return 710}
+          return 3*width/4}
   if(d.emperor195 === '3') {
-          return 740}
+          return 13*width/16}
   if(d.emperor195 === '4') {
-          return 610}
+          return 5*width/8}
   if(d.emperor195 === '5') {
-          return 350}
+          return 3*width/8}
   if(d.emperor195 === "6") {
-          return 540}
+          return 9*width/16}
   if(d.emperor195 === '7') {
-          return 455}
+          return 15*width/32}
   if(d.emperor195 === "8") {
-          return 315}
+          return 5*width/16}
   if(d.emperor195 === "9") {
-          return 410}
+          return 7*width/16}
   if(d.emperor195 === "10") {
-          return 645}
+          return 11*width/16}
   if(d.emperor195 === "11") {
-          return 690}
+          return 23*width/32}
   if(d.emperor195 === "12") {
-          return 610}
+          return 10*width/16}
   if(d.emperor195 === "14") {
-          return 675}
-  else{return 535} }).strength(.4)
+          return 23*width/32}
+  else{return 20*width/32} }).strength(.4)
 var forcey195 = d3.forceY(function(d){
   if(d.emperor195 === '1') {
-      return 275}
+      return 3*height/8}
   if(d.emperor195 === "2") {
-      return 315}
+      return 13*height/32}
   if(d.emperor195 === "3") {
-      return 420}
+      return 9*height/16}
   if(d.emperor195 === "4") {
-      return 225}
+      return 5*height/16}
   if(d.emperor195 === "5") {
-      return 320}
+      return 3*height/8}
   if(d.emperor195 === "6") {
-      return 405}
+      return 1*height/2}
   if(d.emperor195 === "7") {
-      return 325}
+      return 13*height/32}
   if(d.emperor195 === "8") {
-      return 445}
+      return 9*height/16}
   if(d.emperor195 === "9") {
-      return 380}
+      return 15*height/32}
   if(d.emperor195 === "10") {
-      return 120}
+      return 5*height/32}
   if(d.emperor195 === "11") {
-      return 390}
+      return 16*height/32}
   if(d.emperor195 === "12") {
-      return 225}
+      return 12*height/32}
   if(d.emperor195 === "14") {
-      return 330}
-  else{return 685} }).strength(.5)
+      return 14*height/32}
+  else{return 28*height/32} }).strength(.5)
 var forcex200 = d3.forceX(function(d){
   if(d.emperor200 === '1' ) {
       return 580}
@@ -377,18 +379,18 @@ var simulation = d3.forceSimulation()
 					return scaleRadius(d.power)-2}))
 
 var scaleRadius = d3.scaleSqrt().domain([0,60]).range([0,80])
-var color = d3.scaleOrdinal(["#6E7378", "#DD6776", "#EDAE33", "#B27BA6", "#869CA8", "#D4BBCC", "#578EC1", "#6BBEC9", "#A0A0A0","#D67C60", "#74BA8C", "#CCBCD7","#DBC9A7", "#8BAAC7","#938EB6"]);
+var color = d3.scaleOrdinal(["#6E7378", "#DD6776", "#EDAE33", "#B27BA6", "#869CA8", "#957C8C", "#578EC1", "#6BBEC9", "#A0A0A0","#D67C60", "#74BA8C", "#CCBCD7","#DBC9A7", "#8BAAC7","#938EB6"]);
 
 d3.select("svg")
- .attr("width", 960)
- .attr("height", 800)
+ .attr("width", 920)
+ .attr("height", 780)
 
 let container=d3.select("svg")
 d3.csv("sanguo.csv").then(drawCircle)
 
 
 for (i = 0; i <= years.length - 1; i++) {
-  var releft = (years[i]-yearmin)/(yearmax-yearmin)*1260
+  var releft = (years[i]-yearmin)/(yearmax-yearmin)*1220
   console.log(releft)
   d3.select("#timeline1")
   .append("div")
@@ -673,7 +675,7 @@ function showtooltip(d){
 function movetooltip(d){
   d3.select(".tooltip")
   .style("left", (d3.event.pageX +20) + "px")
-  .style("top", (d3.event.pageY) + "px")
+  .style("top", (d3.event.pageY-160) + "px")
 }
 function removetooltip(d){
   d3.select(".tooltip")
