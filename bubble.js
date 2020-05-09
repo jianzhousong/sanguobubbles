@@ -1,8 +1,9 @@
 var years = [189, 195, 200, 208, 214, 221, 263, 280]
 var yearmax = years[years.length-1] + 4
 var yearmin = years[0]-4
-var forcex = d3.forceX(500).strength(.1)
-var forcey = d3.forceY(400).strength(.1)
+var forcex = d3.forceX(500).strength(.4)
+var forcey = d3.forceY(400).strength(.4)
+var forcesize = [100,600]
 var width = 920
 var height = 780
 var hratio = width/960
@@ -98,7 +99,7 @@ var forcey195 = d3.forceY(function(d){
   if(d.emperor195 === "5") {
       return 3*height/8}
   if(d.emperor195 === "6") {
-      return 1*height/2}
+      return 17*height/32}
   if(d.emperor195 === "7") {
       return 13*height/32}
   if(d.emperor195 === "8") {
@@ -374,8 +375,6 @@ var forcey280 = d3.forceY(function(d){
 var simulation = d3.forceSimulation()
         .force("forceX", forcex)
         .force("forceY", forcey)
-				.force("collide", d3.forceCollide().strength(1).radius(function(d){
-					return scaleRadius(d.power)-2}))
 
 var scaleRadius = d3.scaleSqrt().domain([0,60]).range([0,80])
 var color = d3.scaleOrdinal(["#6E7378", "#DD6776", "#EDAE33", "#B27BA6", "#869CA8", "#957C8C", "#578EC1", "#6BBEC9", "#A0A0A0","#D67C60", "#74BA8C", "#CCBCD7","#DBC9A7", "#8BAAC7","#938EB6"]);
@@ -406,11 +405,12 @@ for (i = 0; i <= years.length - 1; i++) {
 function drawCircle(clients) {
   var circles = container.selectAll("circle").data(clients).enter()
 	.append("circle")
-	.attr("r", function(d){return scaleRadius(d.power)})
-	.attr("fill", function(d){return color(d.emperor)})
+  .attr("r", 20)
+  .attr("fill", function(d){return color(d.emperor)})
   .attr("stroke", "#F9F6EF")
   .attr("stroke-width", 2)
-
+  .attr("cx", 600)
+  .attr("cy", 200)
   .call(d3.drag()
       .on("start", dragstarted)
       .on("drag", dragged)
@@ -418,9 +418,8 @@ function drawCircle(clients) {
 	.on('click', function(d){
 		console.log(d)})
   .on('mouseover', showtooltip)
-  .on("mousemove",movetooltip)
-  .on("mouseout",removetooltip)
-
+  .on('mousemove',movetooltip)
+  .on('mouseout',removetooltip)
 
   d3.select("#circle0").on('click', function() {
     console.log("hellohello189")
@@ -445,9 +444,9 @@ function drawCircle(clients) {
     simulation
       .force("forceX", forcex189)
       .force("forceY", forcey189)
-      .force("collide", d3.forceCollide(function(d){
+      .force("collide", d3.forceCollide().strength(1).iterations(100).radius(function(d){
         return scaleRadius(d.power189)+1}))
-        .alphaTarget(0.2).restart()
+      .alphaTarget(0.2).restart()
   })
 
   d3.select("#circle1").on('click', function() {
@@ -472,7 +471,7 @@ function drawCircle(clients) {
     simulation
       .force("forceX", forcex195)
       .force("forceY", forcey195)
-      .force("collide", d3.forceCollide(function(d){
+      .force("collide", d3.forceCollide().strength(1).iterations(20).radius(function(d){
         return scaleRadius(d.power195)+1}))
         .alphaTarget(0.2).restart()
   })
@@ -500,7 +499,7 @@ function drawCircle(clients) {
       .force("forceX", forcex200)
       .force("forceY", forcey200)
       //.force('charge', d3.forceManyBody().strength(1))
-      .force("collide", d3.forceCollide(function(d){
+      .force("collide", d3.forceCollide().strength(1).iterations(20).radius(function(d){
         return scaleRadius(d.power200)+1}))
       .alphaTarget(0.2).restart()
   })
