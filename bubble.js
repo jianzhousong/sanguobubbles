@@ -2,8 +2,7 @@ var years = [189, 195, 200, 208, 214, 221, 263, 280]
 var yearmax = years[years.length-1] + 4
 var yearmin = years[0]-4
 var forcex = d3.forceX(500).strength(.4)
-var forcey = d3.forceY(400).strength(.4)
-var forcesize = [100,600]
+var forcey = d3.forceY(390).strength(.4)
 var width = 920
 var height = 780
 var hratio = width/960
@@ -375,9 +374,12 @@ var forcey280 = d3.forceY(function(d){
 var simulation = d3.forceSimulation()
         .force("forceX", forcex)
         .force("forceY", forcey)
+        .force("collide", d3.forceCollide().strength(1).iterations(100).radius(function(d){
+          return scaleRadius(d.power189)+1}))
+        .alphaTarget(0.2).restart()
 
 var scaleRadius = d3.scaleSqrt().domain([0,60]).range([0,80])
-var color = d3.scaleOrdinal(["#6E7378", "#DD6776", "#EDAE33", "#B27BA6", "#869CA8", "#957C8C", "#578EC1", "#6BBEC9", "#A0A0A0","#D67C60", "#74BA8C", "#CCBCD7","#DBC9A7", "#8BAAC7","#938EB6"]);
+var color = d3.scaleOrdinal(["#6E7378", "#DD6776", "#EDAE33", "#B27BA6", "#869CA8", "#957C8C", "#578EC1", "#6BBEC9", "#A0A0A0","#D67C60", "#74BA8C", "#DFAB86","#DBC9A7", "#8BAAC7","#938EB6"]);
 
 d3.select("svg")
  .attr("width", 920)
@@ -405,8 +407,8 @@ for (i = 0; i <= years.length - 1; i++) {
 function drawCircle(clients) {
   var circles = container.selectAll("circle").data(clients).enter()
 	.append("circle")
-  .attr("r", 20)
-  .attr("fill", function(d){return color(d.emperor)})
+  .attr("r", function(d){return scaleRadius(d.power189)})
+  .attr("fill", function(d){return color(d.emperor189)})
   .attr("stroke", "#F9F6EF")
   .attr("stroke-width", 2)
   .attr("cx", 600)
@@ -438,7 +440,7 @@ function drawCircle(clients) {
     d3.select("h3")
     .text("诸侯讨董")
     d3.select("p")
-    .text("中平六年（189年），董卓废嫡立庶，残暴专权。袁绍，曹操等中央官员纷纷逃离京都，联合关东群雄，于初平元年（190年）组成讨董联军，进军洛阳，经过多场战役，双方各有胜负。而后董卓则迁都长安，火烧洛阳。虽然讨董联军声势浩大，各方诸侯却惧怕董卓，各自保存实力，甚至各怀鬼胎，相互制衡。伴随着一系列的内讧，讨董联盟于初平二年（191年）瓦解。")
+    .text("中平六年（189年），董卓把持朝政，残暴专权。地方诸侯组成讨董联军，进军洛阳，讨伐董卓。董卓则迁都长安，火烧洛阳。虽然讨董联军声势浩大，各方诸侯却惧怕董卓，各自保存实力，甚至各怀鬼胎，相互制衡。伴随着一系列的内讧，讨董联盟于初平二年（191年）瓦解。")
 
 
     simulation
