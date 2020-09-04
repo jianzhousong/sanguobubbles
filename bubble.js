@@ -59,7 +59,7 @@ var forcex195 = d3.forceX(function(d){
   if(d.emperor195 === "2") {
     return 25*mapwidth/32-mapwidth/2}
   if(d.emperor195 === '3') {
-    return 25*mapwidth/32-mapwidth/2}
+    return 28*mapwidth/32-mapwidth/2}
   if(d.emperor195 === '4') {
     return 21*mapwidth/32-mapwidth/2}
   if(d.emperor195 === '5') {
@@ -87,7 +87,7 @@ var forcey195 = d3.forceY(function(d){
   if(d.emperor195 === "2") {
     return 13*mapheight/32-mapheight/2}
   if(d.emperor195 === "3") {
-    return 17*mapheight/32-mapheight/2}
+    return 19*mapheight/32-mapheight/2}
   if(d.emperor195 === "4") {
     return 8*mapheight/32-mapheight/2}
   if(d.emperor195 === "5") {
@@ -141,7 +141,7 @@ var forcey200 = d3.forceY(function(d){
   if(d.emperor200 === "2") {
     return 15*mapheight/32-mapheight/2}
   if(d.emperor200 === "3") {
-    return 18*mapheight/32-mapheight/2}
+    return 17*mapheight/32-mapheight/2}
   if(d.emperor200 === "4") {
     return 8*mapheight/32-mapheight/2}
   if(d.emperor200 === "5") {
@@ -163,11 +163,11 @@ var forcey200 = d3.forceY(function(d){
   else{return 28*mapheight/32-mapheight/2}}).strength(.4)
 var forcex208 = d3.forceX(function(d){
   if(d.emperor208 === '1') {
-    return 20*mapwidth/32-mapwidth/2}
+    return 19*mapwidth/32-mapwidth/2}
   if(d.emperor208 === "2") {
-    return 21*mapwidth/32-mapwidth/2}
+    return 22*mapwidth/32-mapwidth/2}
   if(d.emperor208 === '3') {
-    return 24*mapwidth/32-mapwidth/2}
+    return 23*mapwidth/32-mapwidth/2}
   if(d.emperor208 === '4') {
     return 28*mapwidth/32-mapwidth/2}
   if(d.emperor208 === '5') {
@@ -180,14 +180,14 @@ var forcex208 = d3.forceX(function(d){
     return 14*mapwidth/32-mapwidth/2}
   if(d.emperor208 === "14") {
     return 23*mapwidth/32-mapwidth/2}
-  else{return 20*mapwidth/32-mapwidth/2}}).strength(.2)
+  else{return 20*mapwidth/32-mapwidth/2}}).strength(.4)
 var forcey208 = d3.forceY(function(d){
   if(d.emperor208 === '1') {
-    return 10*mapheight/32-mapheight/2}
+    return 13*mapheight/32-mapheight/2}
   if(d.emperor208 === "2") {
-    return 18*mapheight/32-mapheight/2}
+    return 19*mapheight/32-mapheight/2}
   if(d.emperor208 === "3") {
-    return 17*mapheight/32-mapheight/2}
+    return 20*mapheight/32-mapheight/2}
   if(d.emperor208 === "4") {
     return 2*mapheight/32-mapheight/2}
   if(d.emperor208 === "5") {
@@ -200,14 +200,14 @@ var forcey208 = d3.forceY(function(d){
     return 15*mapheight/32-mapheight/2}
   if(d.emperor208 === "14") {
     return 14*mapheight/32-mapheight/2}
-  else{return 28*mapheight/32-mapheight/2}}).strength(.4)
+  else{return 28*mapheight/32-mapheight/2}}).strength(.2)
 var forcex214 = d3.forceX(function(d){
   if(d.emperor214 === '1') {
     return 20*mapwidth/32-mapwidth/2}
   if(d.emperor214 === "2") {
     return 11*mapwidth/32-mapwidth/2}
   if(d.emperor214 === '3') {
-    return 24*mapwidth/32-mapwidth/2}
+    return 26*mapwidth/32-mapwidth/2}
   if(d.emperor214 === '5') {
       return 10*mapwidth/32-mapwidth/2}
   if(d.emperor214 === "8") {
@@ -221,7 +221,7 @@ var forcey214 = d3.forceY(function(d){
   if(d.emperor214 === "2") {
     return 20*mapheight/32-mapheight/2}
   if(d.emperor214 === "3") {
-    return 20*mapheight/32-mapheight/2}
+    return 18*mapheight/32-mapheight/2}
   if(d.emperor214 === "5") {
     return 10*mapheight/32-mapheight/2}
   if(d.emperor214 === "8") {
@@ -235,7 +235,7 @@ var forcex221 = d3.forceX(function(d){
   if(d.emperor221 === "2") {
     return 11*mapwidth/32-mapwidth/2}
   if(d.emperor221 === '3') {
-    return 24*mapwidth/32-mapwidth/2}
+    return 21*mapwidth/32-mapwidth/2}
   if(d.emperor221 === '5') {
       return 8*mapwidth/32-mapwidth/2}
   if(d.emperor221 === "9") {
@@ -247,7 +247,7 @@ var forcey221 = d3.forceY(function(d){
   if(d.emperor221 === "2") {
     return 20*mapheight/32-mapheight/2}
   if(d.emperor221 === "3") {
-    return 20*mapheight/32-mapheight/2}
+    return 19*mapheight/32-mapheight/2}
   if(d.emperor221 === "5") {
     return 4*mapheight/32-mapheight/2}
   if(d.emperor221 === "9") {
@@ -259,7 +259,7 @@ var forcex263 = d3.forceX(function(d){
   if(d.emperor263 === "2") {
     return 10*mapwidth/32-mapwidth/2}
   if(d.emperor263 === '3') {
-    return 24*mapwidth/32-mapwidth/2}
+    return 26*mapwidth/32-mapwidth/2}
   else{return 20*mapwidth/32-mapwidth/2}}).strength(.2)
 var forcey263 = d3.forceY(function(d){
   if(d.emperor263 === '1') {
@@ -267,7 +267,7 @@ var forcey263 = d3.forceY(function(d){
   if(d.emperor263 === "2") {
     return 18*mapheight/32-mapheight/2}
   if(d.emperor263 === "3") {
-    return 20*mapheight/32-mapheight/2}
+    return 18*mapheight/32-mapheight/2}
   else{return 28*mapheight/32-mapheight/2}}).strength(.2)
 var forcex280 = d3.forceX(function(d){
   if(d.emperor280 === '1') {
