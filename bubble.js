@@ -252,7 +252,7 @@ var forcey221 = d3.forceY(function(d){
     return 4*mapheight/32-mapheight/2}
   if(d.emperor221 === "9") {
     return 15*mapheight/32-mapheight/2}
-  else{return 28*mapheight/32-mapheight/2}}).strength(.2)
+  else{return 28*mapheight/32-mapheight/2}}).strength(.4)
 var forcex263 = d3.forceX(function(d){
   if(d.emperor263 === '1') {
     return 16*mapwidth/32-mapwidth/2}
