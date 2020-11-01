@@ -293,9 +293,10 @@ var color = d3.scaleOrdinal(["#6E7378", "#DD6776", "#EDAE33", "#B27BA6", "#869CA
 
 /* Define d3 force*/
 var simulation = d3.forceSimulation()
+  .velocityDecay(0.4)
   .force("forceX", forcex189)
   .force("forceY", forcey189)
-  .force("collide", d3.forceCollide().strength(1).iterations(10).radius(function(d){
+  .force("collide", d3.forceCollide().iterations(10).radius(function(d){
     return scaleRadius(d.power189)+1}))
   .alphaTarget(0.2).restart()
 
