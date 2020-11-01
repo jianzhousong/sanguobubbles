@@ -1,8 +1,8 @@
 var mapwidth=800
 var mapheight=680
-var years = [189, 195, 200, 208, 214, 221, 263, 280]
-var yearmax = years[years.length-1] + 4
-var yearmin = years[0]-4
+var years = [189, 195, 200, 208, 214, 220, 263, 266, 280]
+var yearmax = years[years.length-1] + 2
+var yearmin = years[0]-2
 
 /* Define d3 forcex and forcey, not sure how to add math format into the forceX()*/
 var forcex189 = d3.forceX(function(d){
@@ -229,28 +229,28 @@ var forcey214 = d3.forceY(function(d){
   if(d.emperor214 === "9") {
     return 15*mapheight/32-mapheight/2}
   else{return 28*mapheight/32-mapheight/2}}).strength(.2)
-var forcex221 = d3.forceX(function(d){
-  if(d.emperor221 === '1') {
+var forcex220 = d3.forceX(function(d){
+  if(d.emperor220 === '1') {
     return 20*mapwidth/32-mapwidth/2}
-  if(d.emperor221 === "2") {
+  if(d.emperor220 === "2") {
     return 11*mapwidth/32-mapwidth/2}
-  if(d.emperor221 === '3') {
+  if(d.emperor220 === '3') {
     return 21*mapwidth/32-mapwidth/2}
-  if(d.emperor221 === '5') {
+  if(d.emperor220 === '5') {
       return 8*mapwidth/32-mapwidth/2}
-  if(d.emperor221 === "9") {
+  if(d.emperor220 === "9") {
     return 14*mapwidth/32-mapwidth/2}
   else{return 20*mapwidth/32-mapwidth/2}}).strength(.2)
-var forcey221 = d3.forceY(function(d){
-  if(d.emperor221 === '1') {
+var forcey220 = d3.forceY(function(d){
+  if(d.emperor220 === '1') {
     return 10*mapheight/32-mapheight/2}
-  if(d.emperor221 === "2") {
+  if(d.emperor220 === "2") {
     return 20*mapheight/32-mapheight/2}
-  if(d.emperor221 === "3") {
+  if(d.emperor220 === "3") {
     return 19*mapheight/32-mapheight/2}
-  if(d.emperor221 === "5") {
+  if(d.emperor220 === "5") {
     return 4*mapheight/32-mapheight/2}
-  if(d.emperor221 === "9") {
+  if(d.emperor220 === "9") {
     return 15*mapheight/32-mapheight/2}
   else{return 28*mapheight/32-mapheight/2}}).strength(.4)
 var forcex263 = d3.forceX(function(d){
@@ -269,6 +269,22 @@ var forcey263 = d3.forceY(function(d){
   if(d.emperor263 === "3") {
     return 18*mapheight/32-mapheight/2}
   else{return 28*mapheight/32-mapheight/2}}).strength(.2)
+var forcex266 = d3.forceX(function(d){
+    if(d.emperor266 === '15') {
+      return 16*mapwidth/32-mapwidth/2}
+    if(d.emperor266 === "2") {
+      return 10*mapwidth/32-mapwidth/2}
+    if(d.emperor266 === '3') {
+      return 26*mapwidth/32-mapwidth/2}
+    else{return 20*mapwidth/32-mapwidth/2}}).strength(.2)
+var forcey266 = d3.forceY(function(d){
+    if(d.emperor266 === '15') {
+      return 14*mapheight/32-mapheight/2}
+    if(d.emperor266 === "2") {
+      return 18*mapheight/32-mapheight/2}
+    if(d.emperor266 === "3") {
+      return 18*mapheight/32-mapheight/2}
+    else{return 28*mapheight/32-mapheight/2}}).strength(.2)
 var forcex280 = d3.forceX(function(d){
   if(d.emperor280 === '1') {
     return 20*mapwidth/32-mapwidth/2}
@@ -289,7 +305,7 @@ d3.select("svg")
 
 /* Define bubble size and color*/
 var scaleRadius = d3.scaleSqrt().domain([0,60]).range([0,72])
-var color = d3.scaleOrdinal(["#6E7378", "#DD6776", "#EDAE33", "#B27BA6", "#869CA8", "#957C8C", "#578EC1", "#6BBEC9", "#A0A0A0","#D67C60", "#74BA8C", "#DFAB86","#DBC9A7", "#8BAAC7","#938EB6"])
+var color = d3.scaleOrdinal(["#6E7378", "#DD6776", "#EDAE33", "#B27BA6", "#869CA8", "#957C8C", "#578EC1", "#6BBEC9", "#A0A0A0","#D67C60", "#74BA8C", "#DFAB86","#709D98", "#88AA94","#938EB6"])
 
 /* Define d3 force*/
 var simulation = d3.forceSimulation()
@@ -482,10 +498,10 @@ function drawCircle(clients) {
 
   })
   d3.select("#circle5").on('click', function() {
-    console.log("hellohello221")
+    console.log("hellohello220")
     circles.transition().duration(800)
-    .attr("r", function(d){return scaleRadius(d.power221)})
-    .attr("fill", function(d){return color(d.emperor221)})
+    .attr("r", function(d){return scaleRadius(d.power220)})
+    .attr("fill", function(d){return color(d.emperor220)})
 
     d3.selectAll(".circleinactive")
     .attr("class", "circleinactive")
@@ -498,13 +514,13 @@ function drawCircle(clients) {
     d3.select("h3")
     .text("三国鼎立")
     d3.select("p")
-    .text("经过一系列战役，曹操统一中国北方，刘备占据益州及部分荆州，而孙权则盘踞东南，魏蜀吴三方相继称帝，成为西汉末年绝对的霸主，三国鼎立的时代开始。")
+    .text("经过一系列战役，曹操统一中国北方。220年曹操之子曹丕逼迫汉献帝刘协禅让帝位，登基建立魏国。接下来的数年内占据蜀地的刘备与盘踞东南孙权相继称帝，三国鼎立的时代开始。")
 
     simulation
-      .force("forceX", forcex221)
-      .force("forceY", forcey221)
+      .force("forceX", forcex220)
+      .force("forceY", forcey220)
       .force("collide", d3.forceCollide().strength(1).iterations(20).radius(function(d){
-        return scaleRadius(d.power221)+1}))
+        return scaleRadius(d.power220)+1}))
       .alphaTarget(0.2).restart()
 
   })
@@ -536,6 +552,33 @@ function drawCircle(clients) {
 
   })
   d3.select("#circle7").on('click', function() {
+    console.log("hellohello266")
+    circles.transition().duration(800)
+    .attr("r", function(d){return scaleRadius(d.power266)})
+    .attr("fill", function(d){return color(d.emperor266)})
+
+    d3.selectAll(".circleinactive")
+    .attr("class", "circleinactive")
+    d3.selectAll(".textinactive")
+    .attr("class", "textinactive")
+    d3.select(this)
+    .attr("class", "circleinactive circleactive")
+    d3.select(this).select(".textinactive")
+    .attr("class", "textinactive textactive")
+    d3.select("h3")
+    .text("司马炎篡魏")
+    d3.select("p")
+    .text("司马昭死后，其子司马炎继承相国晋王位，掌握全国军政大权。经过精心准备，魏咸熙二年（266年2月8日），司马炎仿效当年曹丕篡汉的故事，逼迫魏元帝禅让，即位为帝。晋朝建立，开启了其154年的国祚。")
+
+    simulation
+      .force("forceX", forcex266)
+      .force("forceY", forcey266)
+      .force("collide", d3.forceCollide().strength(1).iterations(20).radius(function(d){
+        return scaleRadius(d.power266)+1}))
+      .alphaTarget(0.2).restart()
+
+  })
+  d3.select("#circle8").on('click', function() {
     console.log("hellohello280")
     circles.transition().duration(800)
     .attr("r", function(d){return scaleRadius(d.power280)})
