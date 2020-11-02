@@ -219,7 +219,7 @@ var forcey214 = d3.forceY(function(d){
   if(d.emperor214 === '1') {
     return 10*mapheight/32-mapheight/2}
   if(d.emperor214 === "2") {
-    return 20*mapheight/32-mapheight/2}
+    return 9*mapheight/16-mapheight/2}
   if(d.emperor214 === "3") {
     return 18*mapheight/32-mapheight/2}
   if(d.emperor214 === "5") {
@@ -245,7 +245,7 @@ var forcey220 = d3.forceY(function(d){
   if(d.emperor220 === '1') {
     return 10*mapheight/32-mapheight/2}
   if(d.emperor220 === "2") {
-    return 20*mapheight/32-mapheight/2}
+    return 18*mapheight/32-mapheight/2}
   if(d.emperor220 === "3") {
     return 19*mapheight/32-mapheight/2}
   if(d.emperor220 === "5") {
