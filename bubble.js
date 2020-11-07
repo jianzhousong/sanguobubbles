@@ -1,6 +1,6 @@
 var mapwidth=800
 var mapheight=680
-var years = [189, 195, 200, 208, 214, 220, 263, 266, 280]
+var years = [189, 196, 200, 208, 214, 220, 263, 266, 280]
 var yearmax = years[years.length-1] + 2
 var yearmin = years[0]-2
 
@@ -53,61 +53,61 @@ var forcey189 = d3.forceY(function(d){
   if(d.emperor189 === "12") {
       return 9*mapheight/32-mapheight/2}
   else{return 31*mapheight/32-mapheight/2}}).strength(.2)
-var forcex195 = d3.forceX(function(d){
-  if(d.emperor195 === '1') {
-    return 11*mapwidth/16-mapwidth/2}
-  if(d.emperor195 === "2") {
-    return 25*mapwidth/32-mapwidth/2}
-  if(d.emperor195 === '3') {
-    return 28*mapwidth/32-mapwidth/2}
-  if(d.emperor195 === '4') {
+var forcex196 = d3.forceX(function(d){
+  if(d.emperor196 === '1') {
     return 21*mapwidth/32-mapwidth/2}
-  if(d.emperor195 === '5') {
+  if(d.emperor196 === "2") {
+    return 23*mapwidth/32-mapwidth/2}
+  if(d.emperor196 === '3') {
+    return 28*mapwidth/32-mapwidth/2}
+  if(d.emperor196 === '4') {
+    return 21*mapwidth/32-mapwidth/2}
+  if(d.emperor196 === '5') {
     return 12*mapwidth/32-mapwidth/2}
-  if(d.emperor195 === "6") {
-    return 18*mapwidth/32-mapwidth/2}
-  if(d.emperor195 === '7') {
+  if(d.emperor196 === "6") {
+    return 19*mapwidth/32-mapwidth/2}
+  if(d.emperor196 === '7') {
     return 15*mapwidth/32-mapwidth/2}
-  if(d.emperor195 === "8") {
+  if(d.emperor196 === "8") {
     return 10*mapwidth/32-mapwidth/2}
-  if(d.emperor195 === "9") {
+  if(d.emperor196 === "9") {
     return 14*mapwidth/32-mapwidth/2}
-  if(d.emperor195 === "10") {
+  if(d.emperor196 === "10") {
     return 22*mapwidth/32-mapwidth/2}
-  if(d.emperor195 === "11") {
+  if(d.emperor196 === "11") {
     return 23*mapwidth/32-mapwidth/2}
-  if(d.emperor195 === "12") {
+  if(d.emperor196 === "12") {
     return 20*mapwidth/32-mapwidth/2}
-  if(d.emperor195 === "14") {
-    return 23*mapwidth/32-mapwidth/2}
+  if(d.emperor196 === "14") {
+    return 25*mapwidth/32-mapwidth/2}
   else{return 20*mapwidth/32-mapwidth/2}}).strength(.2)
-var forcey195 = d3.forceY(function(d){
-  if(d.emperor195 === '1') {
-    return 12*mapheight/32-mapheight/2}
-  if(d.emperor195 === "2") {
+var forcey196 = d3.forceY(function(d){
+  if(d.emperor196 === '1') {
     return 13*mapheight/32-mapheight/2}
-  if(d.emperor195 === "3") {
-    return 19*mapheight/32-mapheight/2}
-  if(d.emperor195 === "4") {
-    return 8*mapheight/32-mapheight/2}
-  if(d.emperor195 === "5") {
-    return 12*mapheight/32-mapheight/2}
-  if(d.emperor195 === "6") {
-    return 17*mapheight/32-mapheight/2}
-  if(d.emperor195 === "7") {
-    return 13*mapheight/32-mapheight/2}
-  if(d.emperor195 === "8") {
-    return 18*mapheight/32-mapheight/2}
-  if(d.emperor195 === "9") {
-    return 15*mapheight/32-mapheight/2}
-  if(d.emperor195 === "10") {
-    return 5*mapheight/32-mapheight/2}
-  if(d.emperor195 === "11") {
-    return 16*mapheight/32-mapheight/2}
-  if(d.emperor195 === "12") {
-    return 12*mapheight/32-mapheight/2}
-  if(d.emperor195 === "14") {
+  if(d.emperor196 === "2") {
     return 14*mapheight/32-mapheight/2}
+  if(d.emperor196 === "3") {
+    return 19*mapheight/32-mapheight/2}
+  if(d.emperor196 === "4") {
+    return 8*mapheight/32-mapheight/2}
+  if(d.emperor196 === "5") {
+    return 12*mapheight/32-mapheight/2}
+  if(d.emperor196 === "6") {
+    return 17*mapheight/32-mapheight/2}
+  if(d.emperor196 === "7") {
+    return 13*mapheight/32-mapheight/2}
+  if(d.emperor196 === "8") {
+    return 18*mapheight/32-mapheight/2}
+  if(d.emperor196 === "9") {
+    return 15*mapheight/32-mapheight/2}
+  if(d.emperor196 === "10") {
+    return 5*mapheight/32-mapheight/2}
+  if(d.emperor196 === "11") {
+    return 16*mapheight/32-mapheight/2}
+  if(d.emperor196 === "12") {
+    return 12*mapheight/32-mapheight/2}
+  if(d.emperor196 === "14") {
+    return 13*mapheight/32-mapheight/2}
   else{return 28*mapheight/32-mapheight/2}}).strength(.2)
 var forcex200 = d3.forceX(function(d){
   if(d.emperor200 === '1') {
@@ -390,10 +390,10 @@ function drawCircle(clients) {
       .alphaTarget(0.2).restart()
   })
   d3.select("#circle1").on('click', function() {
-    console.log("hellohello195")
+    console.log("hellohello196")
     circles.transition().duration(800)
-    .attr("r", function(d){return scaleRadius(d.power195)})
-    .attr("fill", function(d){return color(d.emperor195)})
+    .attr("r", function(d){return scaleRadius(d.power196)})
+    .attr("fill", function(d){return color(d.emperor196)})
 
     d3.selectAll(".circleinactive")
     .attr("class", "circleinactive")
@@ -409,10 +409,10 @@ function drawCircle(clients) {
     .text("讨董联盟瓦解之后，王允设计，挑拨吕布杀死董卓。随后董卓残部击败王允与吕布，重新占领长安，汉献帝再次沦为傀儡。中央对地方的控制愈发微弱，各方诸强相互征伐，最终形成了群雄逐鹿的局面。")
 
     simulation
-      .force("forceX", forcex195)
-      .force("forceY", forcey195)
+      .force("forceX", forcex196)
+      .force("forceY", forcey196)
       .force("collide", d3.forceCollide().strength(1).iterations(20).radius(function(d){
-        return scaleRadius(d.power195)+1}))
+        return scaleRadius(d.power196)+1}))
       .alphaTarget(0.2).restart()
 
   })
