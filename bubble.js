@@ -305,7 +305,7 @@ d3.select("svg")
 
 /* Define bubble size and color*/
 var scaleRadius = d3.scaleSqrt().domain([0,60]).range([0,72])
-var color = d3.scaleOrdinal(["#6E7378", "#DD6776", "#EDAE33", "#B07D95", "#869CA8", "#957C8C", "#578EC1", "#6BBEC9", "#A0A0A0","#9BAF82", "#74BA8C", "#DFAB86","#709D98", "#88AA94","#938EB6"])
+var color = d3.scaleOrdinal(["#6E7378", "#DD6776", "#EDAE33", "#B07D95", "#869CA8", "#957C8C", "#578EC1", "#6BBEC9", "#A0A0A0","#9BAF82", "#CFCB5F", "#DFAB86","#709D98", "#88AA94","#938EB6"])
 
 /* Define d3 force*/
 var simulation = d3.forceSimulation()
@@ -406,7 +406,7 @@ function drawCircle(clients) {
     d3.select("h3")
     .text("群雄逐鹿")
     d3.select("p")
-    .text("讨董联盟瓦解之后，王允设计，挑拨吕布杀死董卓。随后董卓残部击败王允与吕布，重新占领长安，汉献帝再次沦为傀儡。中央对地方的控制愈发微弱，各方诸强相互征伐，最终形成了群雄逐鹿的局面。")
+    .text("讨董联盟瓦解之后，占据兖州的曹操听从部下建议，迎接逃亡的汉献帝，并协助朝廷迁都许县。中央对地方的控制愈发微弱，各方诸强相互征伐，群雄逐鹿的时代开始。")
 
     simulation
       .force("forceX", forcex196)
