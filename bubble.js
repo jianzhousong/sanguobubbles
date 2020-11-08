@@ -305,7 +305,7 @@ d3.select("svg")
 
 /* Define bubble size and color*/
 var scaleRadius = d3.scaleSqrt().domain([0,60]).range([0,72])
-var color = d3.scaleOrdinal(["#6E7378", "#DD6776", "#EDAE33", "#B27BA6", "#869CA8", "#957C8C", "#578EC1", "#6BBEC9", "#A0A0A0","#D67C60", "#74BA8C", "#DFAB86","#709D98", "#88AA94","#938EB6"])
+var color = d3.scaleOrdinal(["#6E7378", "#DD6776", "#EDAE33", "#B07D95", "#869CA8", "#957C8C", "#578EC1", "#6BBEC9", "#A0A0A0","#9BAF82", "#74BA8C", "#DFAB86","#709D98", "#88AA94","#938EB6"])
 
 /* Define d3 force*/
 var simulation = d3.forceSimulation()
