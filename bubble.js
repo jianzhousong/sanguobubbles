@@ -566,7 +566,7 @@ function drawCircle(clients) {
     d3.select(this).select(".textinactive")
     .attr("class", "textinactive textactive")
     d3.select("h3")
-    .text("司马炎篡魏")
+    .text("司马篡魏")
     d3.select("p")
     .text("司马昭死后，其子司马炎继承相国晋王位，掌握全国军政大权。经过精心准备，魏咸熙二年（266年2月8日），司马炎仿效当年曹丕篡汉的故事，逼迫魏元帝禅让，即位为帝。魏国灭亡，而晋朝154年的国祚由此展开。")
 
